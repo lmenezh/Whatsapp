@@ -1,0 +1,26 @@
+
+.o_ConversationCard {
+    @extend %-card-record;
+    
+    .o_conv_image {
+        @extend %-card-image;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+ 
+    .o_conv_details {
+        @extend %-card-detail;
+        
+        .o_conv_name {
+            @extend %-card-name;
+        }
+        
+        ul {
+            li.h5 {
+                    font-weight: normal
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+.o_UserStatus {
+    display: flex;
+    align-items: center;
+
+    .btn-group-toggle {
+        i {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        i:not(.active) {
+            display: none;
+        }
+    }
+}

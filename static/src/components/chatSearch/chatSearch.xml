@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    
+    <t t-name="chatroom.ChatSearch" owl="1">
+        <div class="o_ChatSearch form-inline">
+            <div class="form-group">
+                <input type="text" class="o_search_input"
+                    t-att-placeholder="props.placeHolder"
+                    t-on-keypress="onKeypress" t-ref="inputSearch" />
+                <button class="btn btn-sm btn-primary fa fa-search o_button_search"
+                    type="button" t-on-click="onSearch" />
+            </div>
+        </div>
+    </t>
+
+</templates>

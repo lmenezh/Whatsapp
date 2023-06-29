@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.Chatroom" owl="1">
+        <div class="o_Chatroom" t-ref="chatroomRef">
+            <div class="o_sidebar o_sidebar_left col-xl-2 col-lg-2 col-md-4 col-12"
+                t-attf-class="{{ state.currentMobileSide and firtSideMobile }}">
+                <ChatroomHeader>
+                    <UserStatus user="state.user" />
+                    <button class="btn btn-sm btn-primary acrux_order_current_conversation" type="button"
+                        t-on-click="reorderConversations"
+                        t-attf-title="{{ getSortTitle(state.conversationOrder.current) }}">
+                        <i t-attf-class="fa {{ getSortIcon(state.conversationOrder.current) }}" />
+                    </button>
+                    <i class="navbar-toggler-right d-md-none text-primary fa fa-chevron-circle-right ms-3"
+                        t-on-click="mobileNavigate.bind(this, 'middleSide')"/>
+                </ChatroomHeader>
+                <div class="o_current_chats">
+                    <t t-foreach="currentConversations" t-as="conv" t-key="conv.id">
+                        <Conversation selectedConversation="state.selectedConversation" conversation="conv" />
+                    </t>
+                </div>
+                <ChatroomHeader>
+                    Waiting
+                    <button class="btn btn-sm btn-primary acrux_order_new_conversation" type="button"
+                        t-on-click="reorderConversations"
+                        t-attf-title="{{ getSortTitle(state.conversationOrder.other) }}">
+                        <i t-attf-class="fa {{ getSortIcon(state.conversationOrder.other) }}" />
+                    </button>
+                </ChatroomHeader>
+                <div class="o_new_chats">
+                    <t t-foreach="waintingConversations" t-as="conv" t-key="conv.id">
+                        <Conversation selectedConversation="state.selectedConversation" conversation="conv" />
+                    </t>
+                </div>
+            </div>
+            <div class="o_sidebar o_sidebar_content col-xl-4 col-lg-4 col-md-8 col-12"
+                t-attf-class="{{ state.currentMobileSide and middleSideMobile }}">
+                <ChatroomHeader>
+                    <i class="navbar-toggler-left d-md-none text-primary fa fa-chevron-circle-left"
+                        t-on-click="mobileNavigate.bind(this, 'firstSide')"/>
+                    <ConversationHeader selectedConversation="state.selectedConversation" />
+                    <i class="navbar-toggler-right d-lg-none text-primary fa fa-chevron-circle-right"
+                        t-on-click="mobileNavigate.bind(this, 'lastSide')"/>
+                </ChatroomHeader>
+                <ConversationThread selectedConversation="state.selectedConversation" />
+                <Toolbox selectedConversation="state.selectedConversation"
+                    user="state.user" />
+            </div>
+            <div class="o_sidebar o_sidebar_right col-xl-6 col-lg-6"
+                t-attf-class="{{ (state.currentMobileSide and lastSideMobile) + (state.formMaximize ? ' o_formMaximize' : '') }}">
+                <ProductContainer selectedConversation="state.selectedConversation"/>
+                <div class="o_tabs_resize">
+                    <i class="text-primary fa" t-attf-class="{{ state.formMaximize ? ' fa-angle-down': ' fa-angle-up' }}"
+                        t-on-click="toggleFormSize" />
+                </div>
+                <TabsContainer selectedConversation="state.selectedConversation"
+                    defaultAnswers="defaultAnswers"
+                    conversationUsedFields="conversationUsedFields"
+                    conversationInfoForm="conversationInfoForm"
+                    conversationKanban="conversationKanban"
+                    aiIntefaceForm="aiIntefaceForm"
+                    updateTab="updateTab.bind(this)"
+                    tabSelected="props.tabSelected"
+                    user="state.user"
+                    t-if="state.renderForms" />
+            </div>
+        </div>
+    </t>
+
+</templates>

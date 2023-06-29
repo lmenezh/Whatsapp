@@ -1,0 +1,10 @@
+
+.o_AttachmentUpload {
+    grid-area: core-footer;
+    overflow-x: hidden;
+    max-height: 100px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+}

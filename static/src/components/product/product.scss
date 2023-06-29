@@ -1,0 +1,60 @@
+
+.acrux_Product {
+
+    @extend %-card-record;
+    
+    .o_product_data {
+        display: flex;
+        z-index: 1;
+    }
+    
+    .o_product_image {
+        @extend %-card-image;
+    }
+    
+    .oe_product_details {
+
+        @extend %-card-detail;
+        
+        .o_product_name {
+            @extend %-card-name;
+        }
+        
+    }
+    
+    .product_options_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        
+        button {
+            padding: 0;
+            font-size: 1.2em;
+            margin-right: 3px;
+        }
+    }
+}
+
+.o_web_client.o_touch_device {
+    .acrux_Product .product_options_btn button {
+        font-size: 1.6em !important;
+    }
+    @media (max-width: 768px) {
+        .acrux_Product {
+            width: 100%;
+            .o_product_name span {
+                white-space: unset;
+                width: 100%;
+            }
+        }
+    }
+}
+ @media (max-width: 768px) {
+    .acrux_Product .product_options_btn button {
+        font-size: 1.6em !important;
+    }
+ }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.UserStatus" owl="1">
+        <div class="o_UserStatus">
+            <span>Attending</span>
+            <div class="btn-group-toggle mx-2">
+                <i class="fa fa-toggle-on text-primary" title="Active"
+                    t-attf-class="{{ props.user.status ? 'active': '' }}"
+                    t-on-click="onInactive"/>
+                <i class="fa fa-toggle-on fa-flip-horizontal text-danger" title="Inactive"
+                    t-attf-class="{{ props.user.status ? '': 'active' }}"
+                    t-on-click="onActive"/>
+            </div>
+        </div>
+    </t>
+
+</templates>

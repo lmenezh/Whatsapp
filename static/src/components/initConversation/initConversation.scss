@@ -1,0 +1,15 @@
+
+.o_InitConversation {
+    display: flex;
+    flex-direction: column;
+
+    .o_init_conversation_header {
+        background: transparent;
+        border: 0;
+    }
+
+    .o_acrux_chat_conv_items {
+        @extend %-card-container;
+    }
+}
+

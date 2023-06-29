@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.ProductHeader" owl="1" >
+        <div class="acrux_ProductHeader form-inline">
+            <i class="navbar-toggler-left d-lg-none text-primary fa fa-chevron-circle-left"
+                t-on-click="mobileNavigate"/>
+            <ChatSearch placeHolder="placeHolder" eventName="props.eventName" />
+        </div>
+    </t>
+
+</templates>

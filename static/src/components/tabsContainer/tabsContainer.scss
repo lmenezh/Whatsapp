@@ -1,0 +1,170 @@
+
+.o_formMaximize .o_TabsContainer {
+    flex-basis: calc(100% - 42px);  /* 42px es una cabecera que tiene*/
+    @extend %-tab-transition;
+}
+
+.o_sidebar_right.col-12 .o_TabsContainer {
+    > .o_notebook_headers > ul.nav-tabs {
+        @media (max-width: 624px) {
+            a.nav-link {
+                i {
+                    font-size: 1.6em;
+                }
+                svg {
+                    zoom: 1.4;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.o_sidebar_right:not(.col-12) .o_TabsContainer {
+    > .o_notebook_headers > ul.nav-tabs {
+        @media (max-width: 1190px) {
+            a.nav-link {
+                i {
+                    font-size: 1.6em;
+                }
+                svg {
+                    zoom: 1.4;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.o_TabsContainer {
+    flex-basis: 70%;
+    flex-grow: 0;
+    overflow: hidden;
+    @extend %-tab-transition;
+    > .o_notebook_headers {
+        min-height: 34px;
+        ul li:last-child {
+            padding-right: 36px;
+        }
+    }
+    .o_table_default {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        padding: 1rem 1rem 0;
+        overflow: auto;
+        > div {
+            flex-basis: 50%;
+            flex-grow: 1;
+        }
+    }
+    .o_InfoForm .o_form_statusbar {
+        padding-left: unset;
+        margin-bottom: 16px;
+    }
+    > .o_notebook_content.tab-content {
+        flex: 1 1 auto;
+        height: calc(100% - 34px); /* tiene una cabecera con min-height: 34px;*/
+        overflow: hidden;
+        
+        >div.tab-pane {
+            height: 100%;
+            > div {
+                height: inherit;
+                div.o_ActionTab {
+                    height: inherit;
+                    > div {
+                        height: inherit;
+                        .o_content {
+                            height: inherit;
+                            overflow: auto;
+                        }
+                    }
+                    > div.o_view_controller {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        overflow: hidden
+                    }
+                }
+            }
+        }
+        
+        //Admin Tab
+        .o_ConversationTree .o_ActionTab .o_cp_bottom_left > * {
+            display: none;
+        }
+        .o_ActionTab {
+            .o_FormRenderer_chatterContainer {
+                display: none;
+            }
+            .o_control_panel {
+                .breadcrumb {
+                    li.breadcrumb-item:not(.d-flex) {
+                        display: none;
+                    }
+                    li.breadcrumb-item.d-flex {
+                        >a, >span {
+                            display: none;
+                        }
+                    }
+                    .breadcrumb-item + .breadcrumb-item::before {
+                        display: none;
+                    }
+                }
+            }
+            .o_form_view {
+                .o_form_sheet_bg {
+                    background-color: unset;
+                    border: 0;
+                    > .o_form_sheet {
+                        margin-top: 0;
+                        border: 0;
+                        @media (min-width: 768px) {
+                            .o-form-buttonbox .btn.oe_stat_button,
+                            .o-form-buttonbox > .o_field_widget {
+                                width: 20% !important;
+                                margin-top: 0;
+                                font-size: 0.9rem;
+                            }
+                        }
+                        @media (max-width: 1400px) {  // puede ser 1200
+                            .col-lg-6 {
+                                -webkit-box-flex: 0;
+                                -webkit-flex: 0 0 auto;
+                                flex: 0 0 auto;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    @media (max-width: 1600px) and (min-width: 992px) {
+                        .o_form_statusbar {
+                            flex-flow: column-reverse;
+                            .o_field_statusbar {
+                                align-self: flex-end;
+                            }
+                            .o_statusbar_buttons,
+                            .o_statusbar_status {
+                                button {
+                                    font-size: 0.87rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .o_EmptyTab {
+        text-align: center;
+        padding-top: 1em;
+        
+        span {
+            color:#7C7BAD;
+            font-size:16px;
+        }
+    }
+}

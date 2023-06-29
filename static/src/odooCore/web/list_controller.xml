@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-if='nbSelected']" position="before">
+            <t t-if="props.chatroomTab">
+                <button type="button" class="btn btn-primary o_form_button_search mx-2"
+                    data-hotkey="k" t-on-click="chatroomSelect" t-att-disabled="nbSelected !== 1" >
+                    Select
+                </button>
+            </t>
+        </xpath>
+    </t>
+
+</templates>

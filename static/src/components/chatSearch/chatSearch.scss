@@ -1,0 +1,31 @@
+
+.o_ChatSearch {
+    display: flex;
+    flex-wrap: nowrap;
+    
+    .form-group {
+        align-items: center;
+        display: inline-flex;
+        margin-bottom: 0;
+        
+        label {
+            margin-bottom: 0;
+        }
+        
+        .o_search_input {
+            height: 25px;
+            color: $o-gray-800;
+            background-color: $acrux_input_background_color;
+            border: 0;
+            border-bottom: 1px solid $acrux_input_border_color;
+            padding-left: 5px;
+            margin-right: 5px;
+            max-width: 25em;
+            width: 11em;
+            :hover,
+            :active {
+                border-color: var(--notebook-link-border-color-active-accent, var(--notebook-link-border-color-active));
+            }
+        }
+    }
+}

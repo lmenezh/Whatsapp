@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.ConversationHeader" owl="1">
+        <div class="o_ConversationHeader">
+            <t t-if="props.selectedConversation">
+                <t t-esc="props.selectedConversation.name" />
+                <t t-if="props.selectedConversation.numberFormat">
+                    (<t t-esc="props.selectedConversation.numberFormat" />)
+                </t>
+                <t t-if="props.selectedConversation.showIcon">
+                    <div t-attf-class="{{props.selectedConversation.getIconClass()}} d-lg-none" />
+                </t>
+            </t>
+            <t t-else="">
+                Select a conversation to begin to chat
+            </t>
+        </div>
+    </t>
+
+</templates>

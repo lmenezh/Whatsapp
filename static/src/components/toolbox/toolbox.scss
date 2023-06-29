@@ -1,0 +1,126 @@
+
+.acrux_Toolbox {
+    padding: 0px 3px 1px 0px;
+    min-height: 38px;
+    order: 3;
+    position: relative;
+    width: 100%;
+    background: $o-gray-100;
+    flex: 0 0 auto;
+    
+    .o_chat_toolbox_main {
+        grid-area: core-main;
+        min-width: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex: 1 1 auto;
+        background-color: $o-gray-100;
+
+        .o_chat_toolbox_write {
+            padding: 8px 12px;
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid #5cb85c;
+        }
+
+        .o_chat_toolbox_done {
+            padding-right: 0.7rem;
+            border: 1px solid $o-gray-300;
+            border-radius: 3px 0 0 3px;
+            border-right-width: 0;
+            font-size: 1.5rem;
+            min-height: 36px;
+        }
+
+    }
+
+    .o_chat_toolbox_button_box {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .o_chat_toolbox_container {
+        flex: 1 1 auto;
+        position: relative;
+        padding-right: 3px;
+        
+        .o_chat_toolbox_comp {
+            padding: 6px 10px 0 10px;
+            border-radius: 2px 0 0 2px;
+            position: relative;
+            background-color: $o-white;
+            border: 1px solid $o-gray-300;
+            border-left-width: 0;
+
+            .o_chat_toolbox_input {
+                display: flex;
+                flex-flow: row wrap;
+                
+                .o_chat_toolbox_text_field:disabled,
+                .o_chat_toolbox_text_field[disabled] {
+                    opacity: 0.3;
+                }
+                
+                .o_chat_toolbox_text_field {
+                    flex: 1 1 50%;
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    width: 100%;
+                    resize: none;
+                    min-height: 28px;
+                    max-height: 250px;
+                    height: 28px;
+                    overflow: hidden;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+    
+    .o_chat_toolbox_send {
+        border: 0;
+        color: #0e4cff;
+        font-size: 28px;
+        line-height: 1;
+        padding: 0px 2px 0px 6px;
+        opacity: 0.7;
+        background-color: unset;
+    }
+    
+    .o_chat_toolbox_send:hover {
+        opacity: 1;
+    }
+    
+    .o_chat_option_button {
+        border: 0;
+        color: gray;
+        font-size: 24px;
+
+        padding: 0px 2px 0px 2px;
+        outline: 1px;
+        opacity: 0.7;
+        background-color: unset;
+    }
+
+    .o_chat_option_button.o_chat_button_add_attachment {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    .o_chat_option_button:hover {
+        opacity: 1;
+    }
+    
+    .o_chat_option_button:disabled,
+    .o_chat_option_button[disabled] {
+        opacity: 0.3
+    }
+
+    .o_AttachmentList {
+        max-width: 100%;
+    }
+
+}

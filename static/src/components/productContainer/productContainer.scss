@@ -1,0 +1,18 @@
+
+.o_formMaximize .acrux_ProductContainer {
+    max-height: 42px;
+    @extend %-tab-transition;
+}
+
+.acrux_ProductContainer {
+    overflow: hidden;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    min-height: 36px;
+    @extend %-tab-transition;
+
+    .o_acrux_chat_product_items {
+        @extend %-card-container;
+    }
+}

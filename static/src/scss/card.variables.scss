@@ -1,0 +1,176 @@
+
+// $o-webclient-background-color > fond body
+// $o-gray-200 > color fondo menu tabs
+// var(--body-color) > color de texto
+// kanban
+// $o-border-color ó $border-color > color borde kanban
+// $o-view-background-color > fondo
+
+$acrux_conversation_hover: if($o-webclient-color-scheme == 'bright', #e7ffd4, #1f3434);
+$acrux_header_background_color: if($o-webclient-color-scheme == 'bright', lavender, $o-gray-200);
+$acrux_header_border_color: if($o-webclient-color-scheme == 'bright', #cccccc, $o-gray-200);
+$acrux_content_background_color: if($o-webclient-color-scheme == 'bright', transparent, #0b0410d9);
+$acrux_content_background_image: if($o-webclient-color-scheme == 'bright',
+    url(/whatsapp_connector/static/src/img/fondo2.png),
+    url(/whatsapp_connector/static/src/img/fondo3.jpg)
+);
+$acrux_message_out_background_color: if($o-webclient-color-scheme == 'bright', #dcf8c6, #2c3a3a);
+$acrux_input_background_color: if($o-webclient-color-scheme == 'bright', $o-white, $o-gray-200);
+$acrux_input_border_color: gray;
+$acrux_color_red_bg: if($o-webclient-color-scheme == 'bright', #dc3545, #5c121b);
+$acrux_color_red_bg_txt: if($o-webclient-color-scheme == 'bright', #FFF, #FFD6D0);
+$acrux_color_red_txt: if($o-webclient-color-scheme == 'bright', #bd3f4f, #b1636d);
+$acrux_highlight_txt: #3f7cbd;
+$aux_shadow_light: 0 0 6px 1px;
+$aux_shadow_dark: 0 0 3px 3px;
+$acrux_shadow: if($o-webclient-color-scheme == 'bright', $aux_shadow_dark , $aux_shadow_light);
+
+.acrux_img_shadow {
+    box-shadow: $acrux_shadow;
+}
+
+.acrux_red_text {
+    color: $acrux_color_red_txt;
+}
+.acrux_btn_danger {
+    color: $acrux_color_red_bg_txt;
+    background-color: $acrux_color_red_bg;
+    border: 1px solid darken($acrux_color_red_bg, 10%);
+}
+.btn.acrux_btn_danger:hover {
+    color: #ffcf00;
+}
+
+.acrux_button {
+    height: 23px;
+    margin-top: 1px;
+    line-height: 0.9rem;;
+}
+.o_web_client.o_touch_device .acrux_button {
+    height: 30px;
+    margin-top: unset;
+}
+
+.acrux_conversation_note {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+    font-size: 0.9em;
+    color: $acrux_highlight_txt;
+}
+
+%-tab-transition {
+    transition: max-height 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+%-card-record {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border: 1px solid $o-border-color;
+    background-color: $o-view-background-color;
+    flex: 0 1 auto;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    padding: 4px;
+    color: var(--body-color);
+    flex-direction: row;
+    //height: fit-content;
+    touch-action: auto;
+
+    @media (max-width: 768px) {
+        margin: -1px 0 0 -1px;
+        width: 50%;
+    }
+}
+
+%-card-image {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    max-height: 50px;
+    max-width: 50px;
+    
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        width: auto;
+    }
+    .acrux_facebook,
+    .acrux_messenger,
+    .acrux_instagram,
+    .acrux_whatsapp {
+        background-image: url(/whatsapp_connector/static/src/img/social_icons_v2.png);
+        background-repeat: no-repeat;
+        background-size: 176px 60px;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        bottom: -16px;
+        right: -16px;
+        transform: scale(0.33);
+    }
+
+    .acrux_facebook {
+        background-position: 0 0;
+    }
+
+    .acrux_messenger {
+        background-position: 0 0;
+    }
+
+    .acrux_instagram {
+        background-position: -59px 0;
+    }
+
+    .acrux_whatsapp {
+        background-position: -118px 0;
+    }
+
+}
+
+%-card-detail {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    ul {
+        margin-bottom: 2.5px;
+        padding-left: 0;
+        list-style: none;
+        font-size: 11px;
+    }
+}
+
+%-card-name {
+    color: inherit;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+    
+    span {
+        display: block;
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+%-card-container {
+    display: flex;
+    flex: 1 1 auto;
+    height: 0;
+    overflow: auto;
+    padding: 5px 0 0 5px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
+}

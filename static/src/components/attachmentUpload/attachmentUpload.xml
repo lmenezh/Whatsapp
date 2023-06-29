@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.AttachmentUpload" owl="1">
+        <div class="o_AttachmentUpload">
+            <input type="file" multiple="false" t-on-change="onChangeAttachment"
+                t-ref="fileInput" class="d-none" />
+            <div class="o_AttachmentList d-flex flex-column mt-1">
+                <div t-if="props.attachList.attachmentImages.length > 0" class="o_AttachmentList_partialList o_AttachmentList_partialListImages d-flex flex-grow-1 flex-wrap">
+                    <t t-foreach="props.attachList.attachmentImages" t-as="attachmentImage" t-key="attachmentImage.localId">
+                        <AttachmentImage className="'o_AttachmentList_attachment mw-100 mb-1 me-1'"
+                            record="attachmentImage"/>
+                    </t>
+                </div>
+                <div t-if="props.attachList.attachmentCards.length > 0" class="o_AttachmentList_partialList o_AttachmentList_partialListNonImages d-flex flex-grow-1 flex-wrap mt-1">
+                    <t t-foreach="props.attachList.attachmentCards" t-as="attachmentCard" t-key="attachmentCard.localId">
+                        <AttachmentCard className="'o_AttachmentList_attachment mw-100 mb-1 me-1'"
+                            record="attachmentCard"/>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

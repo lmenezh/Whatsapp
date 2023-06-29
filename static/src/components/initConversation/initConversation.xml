@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="chatroom.InitConversation" owl="1">
+        <div class="o_InitConversation">
+            <ChatroomHeader className="'o_init_conversation_header'">
+                <ChatSearch placeHolder="placeHolder" eventName="'searchConversation'" />
+                <button class="btn btn-sm acrux_button btn-primary mx-2" type="button"
+                    t-on-click="createConversation">
+                    Create
+                </button>
+            </ChatroomHeader>
+            <div class="o_acrux_chat_conv_items">
+                <t t-foreach="state.convList" t-as="conv" t-key="conv.id">
+                    <ConversationCard conversation="conv" />
+                </t>
+            </div>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,21 @@
+
+.o_ChatroomHeader {
+    min-height: 42px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px 0 6px;
+    align-items: center;
+    color: var(--body-color);
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex: 0 1 42px;
+    background-color: $acrux_header_background_color;
+    border-top: 1px solid $acrux_header_border_color;
+    border-bottom: 1px solid $acrux_header_border_color;
+}
+
+//.o_ChatroomHeader.o_ChatroomHeader_alt {
+//    background-color: unset;
+//    border-bottom: 0;
+//    border-top: 6px double $acrux_header_border_color;
+//}
